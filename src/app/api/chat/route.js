@@ -5,7 +5,7 @@ import OpenAI from 'openai' // Import OpenAI library for interacting with the Op
 // System prompt for the AI, providing guidelines on how to respond to users
 const systemPrompt = ChatPrompt
 
-// POST function to handle incoming requests
+// POST function to handle incoming requestss
 export async function POST(req) {
   const openai = new OpenAI() // Create a new instance of the OpenAI client
   const data = await req.json() // Parse the JSON body of the incoming request
