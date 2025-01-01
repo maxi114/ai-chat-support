@@ -89,13 +89,28 @@ const MessageInput = ({ onSubmit, disabled }) => {
         justifyContent: "center",
       }}
     >
-
-
-{/*------------code to display the messages ----------------------*/}
-<div className="flex-grow-1 overflow-auto p-3" style={{ maxHeight: "calc(100% - 100px)", width:"90%",}}>
+      {/*------------code to display the messages ------------------*/}
+      <div
+        className="flex-grow-1 overflow-auto p-3"
+        style={{ maxHeight: "calc(100% - 100px)", width: "90%" }}
+      >
         {messages.map((message, index) => (
-          <div key={index} className={`d-flex ${message.role === "assistant" ? "justify-content-start" : "justify-content-end"} mb-3`}>
-            <div className={`card ${message.role === "assistant" ? "bg-light" : "bg-primary text-white"}`} style={{ maxWidth: "75%" }}>
+          <div
+            key={index}
+            className={`d-flex ${
+              message.role === "assistant"
+                ? "justify-content-start"
+                : "justify-content-end"
+            } mb-3`}
+          >
+            <div
+              className={`card ${
+                message.role === "assistant"
+                  ? "bg-light"
+                  : "bg-primary text-white"
+              }`}
+              style={{ maxWidth: "75%" }}
+            >
               <div className="card-body py-2 px-3">
                 <p className="mb-0">{message.content}</p>
               </div>
@@ -118,12 +133,18 @@ const MessageInput = ({ onSubmit, disabled }) => {
 
       <form
         onSubmit={sendMessage}
-        style={{ position: "absolute", bottom: "0px", width: "90%", border:"solid 1px black", borderRadius: "10px"}}
+        style={{
+          position: "absolute",
+          bottom: "0px",
+          width: "90%",
+          border: "solid 1px black",
+          borderRadius: "10px",
+        }}
       >
         <Input
           type="text"
           value={message}
-          style={{borderRadius: "10px"}}
+          style={{ borderRadius: "10px" }}
           placeholder="Your message here"
           onChange={(e) => setMessage(e.target.value)}
           onKeyDown={(e) => {
