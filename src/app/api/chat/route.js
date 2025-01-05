@@ -17,7 +17,7 @@ export async function POST(req) {
     stream: true, // Enable streaming responses
   });
 
-  // Create a ReadableStream to handle the streaming responsess correctly
+  // Create a ReadableStream to handle the streaming res correctly
   const stream = new ReadableStream({
     async start(controller) {
       const encoder = new TextEncoder(); // Create a TextEncoder to convert strings to Uint8Array
