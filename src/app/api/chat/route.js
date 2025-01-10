@@ -14,7 +14,7 @@ export async function POST(req) {
   const completion = await openai.chat.completions.create({
     messages: [{ role: "system", content: systemPrompt }, ...data], // Include the system prompt and user messages
     model: "gpt-4o", // Specify the model to use
-    stream: true, // Enable streaming responses
+    stream: true, // Enable streaming respo
   });
 
   // Create a ReadableStream to handle the streaming res co
